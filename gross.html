@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gross Profit Calculator</title>
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid mw-100 mh-100 bg-dark" style="border:0;margin-bottom:-200px;padding-bottom:200px;">
+	<form action="javascript:count()">
+	  <div class="card mb-3 mw-100 mh-100 bg-dark" style="border:0">
+		<div class="card mt-3 mw-100 mh-100 text-white bg-dark" style="border:0">
+		  <center><h3>Gross Profit Calculator</h3></center>
+		</div>
+
+  <div class="card-body mw-100 mh-100 text-black bg-dark" style="border:0">
+	<div class="row mb-2 mw-100 mh-100" style="border:0">
+	  <div class="col-md-12 col-lg-12 text-center">
+		<p class="text-secondary text-light	">Kalkulator ini dapat digunakan untuk menghitung Laba Kotor (Gross Profit)<br><br>
+			<b>Semua kolom jumlah wajib diisi<br> 
+				Apabila terdapat kolom yang tidak perlu, silahkan isi dengan angka 0<br><br>
+			Mohon mengisi kolom tanpa pemisah ribuan (contoh : 509000; 823765; 93032)</b> 
+			
+			</p>
+		</p>
+		  </div>
+	   </div>
+	
+
+<!-- HPP-->
+
+	<div class="row mb-4">
+		<div class="col-lg-6 col-sm-12">
+			<div class="card" style="border:0">
+		  		<div class="card-header bg-secondary text-white">
+					<center><h4>Harga Pokok Penjualan</h5></center>
+	</div>
+									
+		
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Persediaan Awal
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="hpp01" type="number" pattern="(0-9)"
+						title="0-9" min="0" maxlength="20" class="form-control" placeholder="Jumlah">
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Pembelian
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="hpp02" type="number" pattern="(0-9)"
+						title="0-9" min="0" maxlength="20" class="form-control" placeholder="Jumlah">
+				</div>
+			</div>
+			
+		</div>
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Retur
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="hpp03" type="number" pattern="(0-9)"
+						title="0-9" min="0" maxlength="20" class="form-control" placeholder="Jumlah">
+				</div>
+			</div>
+			
+		</div>
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Diskon
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="hpp04" type="number" pattern="(0-9)"
+						title="0-9" min="0" maxlength="20" class="form-control" placeholder="Jumlah">
+				</div>
+			</div>
+			
+		</div>
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Beban Angkut
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="hpp05" type="number" pattern="(0-9)"
+						title="0-9" min="0" maxlength="20" class="form-control" placeholder="Jumlah">
+				</div>
+			</div>
+			
+		</div>
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Persediaan Akhir
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="hpp06" type="number" pattern="(0-9)"
+						title="0-9" min="0" maxlength="20" class="form-control" placeholder="Jumlah">
+				</div>
+			</div>
+			
+		</div>
+		
+		
+		
+	<div class="card-footer bg-secondary text-white">
+        <center><h5 id="hpp">Harga Pokok Penjualan : 0</h5></center>
+        
+		<div class="row mt-4 text-left">
+            </div>
+        </div>
+	</div>
+</div></div>
+
+<!-- Penjualan Bersih-->
+
+	<div class="col-lg-6 col-sm-12">
+		<div class="card" style="border:0">
+		  <div class="card-header bg-light text-black">
+			<center><h4>Penjualan Bersih</h4></center>
+	</div>
+							
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Penjualan
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="pb01" type="number" pattern="(0-9)"
+						title="0-9" min="0" maxlength="20" class="form-control" placeholder="Jumlah">
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Retur
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="pb02" type="number" pattern="(0-9)"
+						title="0-9" min="0" maxlength="20" class="form-control" placeholder="Jumlah">
+				</div>
+			</div>
+			
+		</div>
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Diskon
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="pb03" type="number" pattern="(0-9)"
+						title="0-9" min="0" maxlength="20" class="form-control" placeholder="Jumlah">
+				</div>
+			</div>
+			
+		</div>
+	
+		<div class="card-footer bg-white text-black">
+			<center><h5 id="pb">Penjualan Bersih : 0</h5></center>
+            <div class="row mt-4 text-left">
+               </div>
+            </div>
+        </div>
+        </div>
+             </div>   
+            </div>
+            <div class="row mt-4 text-left">
+                <div class="col-sm-12 text-left"></div></div>
+                    <center><button class="btn btn-lg btn-block btn-primary" style="width:400px"; 
+                        type="submit">Hitung Laba Kotor</button></center>
+    </div>
+    <div class="card-footer bg-secondary text-white mt-2">
+		<center><h5 id="gross">Laba Kotor : 0</h5></center>
+		</div>
+    <div class="row mt-4 text-left">
+        <div class="col-sm-12 text-left"></div></div>
+		<center><button class="btn btn-lg btn-block btn-info" style="width:300px" onclick="location.href='../Accounting Calculator/operating.html'"><h5>Hitung Beban Operasional</h5></button></center>
+         
+				</div>
+				
+</form>
+				<script type="text/javascript">
+					// Calculation
+					function count(){
+				
+						var hppOne = document.getElementById('hpp01').value;
+						var hppTwo = document.getElementById('hpp02').value;
+						var hppThree = document.getElementById('hpp03').value;
+						var hppFour = document.getElementById('hpp04').value;
+						var hppFive = document.getElementById('hpp05').value;
+						var hppSix = document.getElementById('hpp06').value;
+					   
+						
+						var pbOne = document.getElementById('pb01').value;
+						var pbTwo = document.getElementById('pb02').value;
+						var pbThree = document.getElementById('pb03').value;
+						
+					  
+						var hargaOne = parseFloat(hppOne)
+						var hargaTwo = parseFloat(hppTwo);
+						var hargaThree = parseFloat(hppThree);
+						var hargaFour = parseFloat(hppFour); 
+						var hargaFive = parseFloat(hppFive);
+						var hargaSix = parseFloat(hppSix);
+				
+						var penjualanOne = parseInt(pbOne);
+						var penjualanTwo = parseInt(pbTwo);
+						var penjualanThree = parseInt(pbThree);
+						
+						var items = (hargaTwo - hargaThree - hargaFour + hargaFive);
+						var hppResult = hargaOne + items - hargaSix;
+						var penjualanResult = penjualanOne - penjualanTwo - penjualanThree
+						var gross = penjualanResult - hppResult;
+		
+					// Output
+					document.getElementById("hpp").innerHTML = "Harga Pokok Penjualan : " + hppResult;
+					document.getElementById("pb").innerHTML = "Penjualan Bersih : " + penjualanResult;
+					document.getElementById("gross").innerHTML = "Laba Kotor : " + (gross);
+				
+				
+					}
+					
+				</script>
+				</body>
+				</html>
