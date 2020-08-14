@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <div class="container-fluid mw-100 mh-100 bg-dark" style="border:0;margin-bottom:-200px;padding-bottom:200px;">
+  <div class="container-fluid mw-100 mh-100 bg-dark" style="border:0;margin-bottom:-1500px;padding-bottom:1500px;">
 	<form action="javascript:count()">
 	  <div class="card mb-3 mw-100 mh-100 bg-dark" style="border:0">
 		<div class="card mt-3 mw-100 mh-100 text-white bg-dark" style="border:0">
@@ -26,3 +26,76 @@
 		  </div>
 	   </div>
 	
+<!-- Penjualan Bersih-->
+
+<div class="col-lg-6 col-sm-12">
+	<div class="card" style="border:0">
+	  <div class="card-header bg-light text-black">
+		<center><h4>Beban Operasional</h4></center>
+</div>
+						
+<div class="card-body bg-dark">
+	<div class="row mb-1">
+		<div class="col-6">
+			<div class="text-left text-white">
+					Laba Kotor
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="input-group text">
+				<input id="lk" type="number" pattern="(0-9)"
+					title="0-9" min="0" maxlength="20" class="form-control" placeholder="Jumlah">
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="row mb-1">
+		<div class="col-6">
+			<div class="text-left text-white">
+					Net Income
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="input-group text">
+				<input id="ni" type="number" pattern="(0-9)"
+					title="0-9" min="0" maxlength="20" class="form-control" placeholder="Jumlah">
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="row mt-4 text-left">
+		<div class="col-sm-12 text-left"></div></div>
+			<center><button class="btn btn-lg btn-block btn-primary" style="width:400px"; 
+				type="submit">Hitung Laba Kotor</button></center>
+
+<div class="card-footer bg-secondary text-white mt-2">
+<center><h5 id="opex">Beban Operasional : 0</h5></center>
+</div>
+
+</form>
+<script type="text/javascript">
+	// Calculation
+	function count(){
+
+		var gross = document.getElementById('lk').value;
+		
+		var income = document.getElementById('ni').value;
+	
+		var grossOne = parseFloat(gross)
+
+		var incomeOne = parseInt(income);
+		
+		var result = gross - income;
+
+	// Output
+	document.getElementById("opex").innerHTML = "Beban Operasional : " + result;
+
+
+
+	}
+	
+</script>
+</body>
+</html>
