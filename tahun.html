@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Metode Jumlah Angka Tahun</title>
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid mw-100 mh-100 bg-dark" style="border:0;margin-bottom:-1500px;padding-bottom:1500px;">
+	<form action="javascript:count()">
+	  <div class="card mb-3 mw-100 mh-100 bg-dark" style="border:0">
+		<div class="card mt-3 mw-100 mh-100 text-white bg-dark" style="border:0">
+		  <center><h3>Metode Penyusutan - Jumlah Angka Tahun</h3></center>
+		</div>
+
+  <div class="card-body mw-100 mh-100 text-black bg-dark" style="border:0">
+	<div class="row mb-2 mw-100 mh-100" style="border:0">
+	  <div class="col-md-12 col-lg-12 text-center">
+		<p class="text-secondary text-light	">Kalkulator ini dapat digunakan untuk menghitung Beban Penyusutan dengan menggunakan Metode Jumlah Angka Tahun<br><br>
+			<b>Semua kolom jumlah wajib diisi<br> 
+				Apabila terdapat kolom yang tidak perlu, silahkan isi dengan angka 0<br><br>
+			Mohon mengisi kolom tanpa pemisah ribuan (contoh : 509000; 823765; 93032)</b> 
+			
+			</p>
+		</p>
+		  </div>
+	   </div>
+	
+
+<!-- JAT-->
+
+	<div class="row mb-4">
+		<div class="col-lg-12 col-sm-12">
+			<div class="card" style="border:0">
+		  		<div class="card-header bg-secondary text-white">
+					<center><h4>Jumlah Angka Tahun</h5></center>
+	</div>
+									
+		
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Cost
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="one" type="number" pattern="(0-9)"
+						title="0-9" min="0" maxlength="20" class="form-control" placeholder="Jumlah">
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Umur Ekonomis
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="two" type="number" pattern="(0-9)"
+						title="0-9" min="0" maxlength="20" class="form-control" placeholder="Jumlah">
+				</div>
+			</div>
+			
+		</div>
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Nilai Residu
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="three" type="number" pattern="(0-9)"
+						title="0-9" min="0" maxlength="20" class="form-control" placeholder="Jumlah">
+				</div>
+			</div>
+			
+		</div>
+	
+		
+		
+		
+	<div class="card-footer bg-secondary text-white">
+        <center><h5 id="jat">Jumlah Angka Tahun : 0</h5></center>
+        <center><h5 id="dp">Dasar Penyusutan : 0</h5></center>
+		<div class="row mt-4 text-left">
+            </div>
+        </div>
+	</div>
+</div></div>
+
+<!-- Tabel Depresiasi-->
+
+	<div class="col-lg-12 col-sm-12">
+		<div class="card" style="border:0">
+		  <div class="card-header bg-light text-black">
+			<center><h4>Tabel Depresiasi</h4></center>
+	</div>
+							
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-3 text-white">
+                <center><h5><b id="th">Tahun</b></h5></center>
+				</div>
+			<div class="col-3 text-white">
+                <center><h5><b id="fr">Fraksi</b></center></h5>
+                </div>
+            <div class="col-3 text-white">
+                <center><h5><b id="bd">Beban Depresiasi</b></h5></center>
+                </div>
+            <div class="col-3 text-white">
+                <center><h5><b id="nb">Nilai Buku</b></h5></center>
+                </div>
+            </div>
+        
+        <div class="row mb-1">
+            <div class="col-3 text-white">
+                    <center><b id="th1"><br>1</b></center>
+                    </div>
+            <div class="col-3 text-white">
+                    <center><b id="fr1"><br>0</b></center>
+                    </div>
+            <div class="col-3 text-white">
+                    <center><b id="bd1"><br>0</b></center>
+                    </div>
+            <div class="col-3 text-white">
+                    <center><b id="nb1"><br>0</b></center>
+                    </div>
+                </div>
+			
+                
+        
+        <div class="row mb-1">
+            <div class="col-3 text-white">
+                    <center><b id="th2"><br>2</b></center>
+                    </div>
+            <div class="col-3 text-white">
+                    <center><b id="fr2"><br>0</b></center>
+                    </div>
+            <div class="col-3 text-white">
+                    <center><b id="bd2"><br>0</b></center>
+                    </div>
+            <div class="col-3 text-white">
+                    <center><b id="nb2"><br>0</b></center>
+                    </div>
+                </div>
+        
+            <div class="row mb-1">
+                <div class="col-3 text-white">
+                    <center><b id="th3"><br>3</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="fr3"><br>0</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="bd3"><br>0</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="nb3"><br>0</b></center>
+                    </div>
+                        </div>
+            
+            <div class="row mb-1">
+                <div class="col-3 text-white">
+                    <center><b id="th4"><br>4</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="fr4"><br>0</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="bd4"><br>0</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="nb4"><br>0</b></center>
+                    </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-3 text-white">
+                    <center><b id="th5"><br>5</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="fr5"><br>0</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="bd5"><br>0</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="nb5"><br>0</b></center>
+                    </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-3 text-white">
+                    <center><b id="th6"><br>6</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="fr6"><br>0</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="bd6"><br>0</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="nb6"><br>0</b></center>
+                    </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-3 text-white">
+                    <center><b id="th7"><br>7</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="fr7"><br>0</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="bd7"><br>0</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="nb7"><br>0</b></center>
+                    </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-3 text-white">
+                    <center><b id="th8"><br>8</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="fr8"><br>0</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="bd8"><br>0</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="nb8"><br>0</b></center>
+                    </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-3 text-white">
+                    <center><b id="th9"><br>9</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="fr9"><br>0</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="bd9"><br>0</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="nb9"><br>0</b></center>
+                    </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-3 text-white">
+                    <center><b id="th10"><br>10</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="fr10"><br>0</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="bd10"><br>0</b></center>
+                    </div>
+                <div class="col-3 text-white">
+                    <center><b id="nb10"><br>0</b></center>
+                    </div>
+            </div>
+		</div>
+
+		
+		</div>
+	
+		<div class="card-footer bg-white text-black">
+			<center><h5 id="bdtot">Beban Depresiasi : 0</h5></center>
+            <div class="row mt-4 text-left">
+               </div>
+            </div>
+        </div>
+        </div>
+  
+            <div class="row mt-4 text-left">
+                <div class="col-sm-12 text-left"></div></div>
+                    <center><button class="btn btn-lg btn-block btn-primary" style="width:400px"; 
+                        type="submit">Hitung Beban Depresiasi</button></center><br>
+  
+   
+    <div class="row mt-4 text-left">
+        <div class="col-sm-12 text-left"></div></div>
+		<center><button class="btn btn-lg btn-block btn-info" style="width:300px" onclick="location.href='penyusutan.html'"><h5>Gunakan Metode Lainnya</h5></button></center>
+         
+				</div>
+				
+</form>
+				<script type="text/javascript">
+					// Calculation
+					function count(){
+				
+						var cst = document.getElementById('one').value;
+						var uek = document.getElementById('two').value;
+						var res = document.getElementById('three').value;
+                        
+                        var cost = parseFloat(cst)
+						var umur = parseFloat(uek);
+						var residu = parseFloat(res);
+                        
+                        var thOne = document.getElementById('th1').value;
+						var thTwo = document.getElementById('th2').value;
+						var thThree = document.getElementById('th3').value;
+                        var thFour = document.getElementById('th4').value;
+                        var thFive = document.getElementById('th5').value;
+                        var thSix = document.getElementById('th6').value;
+                        var thSeven = document.getElementById('th7').value;
+                        var thEight = document.getElementById('th8').value;
+                        var thNine = document.getElementById('th9').value;
+                        var thTen = document.getElementById('th10').value;
+
+						var tahunOne = parseFloat(thOne)
+						var tahunTwo = parseFloat(thTwo);
+						var tahunThree = parseFloat(thThree);
+                        var tahunFour = parseFloat(thFour)
+						var tahunFive = parseFloat(thFive);
+						var tahunSix = parseFloat(thSix);
+                        var tahunSeven = parseFloat(thSeven)
+						var tahunEight = parseFloat(thEight);
+						var tahunNine = parseFloat(thNine);
+                        var tahunTen = parseFloat(thTen);
+			
+					    var jatResult = ((umur * (umur + 1)/2));
+						var dpResult = (cost - residu);
+
+
+                        if (umur - 1 >= 1)
+                            var frakTwo = umur - 1;
+                            else if (umur - 1 < 1 || umur != 1) {
+                               var frakTwo = '-';
+                            }  
+
+                        if (frakTwo - 1 >= 1)
+                            var frakThree = frakTwo - 1;
+                            else if (frakTwo - 1 < 1 || frakTwo != 1) {
+                               var frakThree = '-';
+                            } 
+                        if (frakThree - 1 >= 1)
+                            var frakFour = frakThree - 1;
+                            else if (frakThree - 1 < 1 || frakThree != 1) {
+                               var frakFour = '-';
+                            }  
+                        if (frakFour - 1 >= 1)
+                            var frakFive = frakFour - 1;
+                            else if (frakFour - 1 < 1 || frakFour != 1) {
+                               var frakFive = '-';
+                            }
+                        
+                        if (frakFive - 1 >= 1)
+                            var frakSix = frakFive - 1;
+                            else if (frakFive - 1 < 1 || frakFive != 1) {
+                               var frakSix = "-";
+                            }
+
+                        if (frakSix - 1 >= 1)
+                            var frakSeven = frakSix - 1;
+                            else if (frakSix - 1 < 1 || frakSix != 1) {
+                               var frakSeven = "-";
+                            }
+
+                        if (frakSeven - 1 >= 1)
+                            var frakEight = frakSeven - 1;
+                            else if (frakSeven - 1 < 1 || frakSeven != 1) {
+                               var frakEight = "-";
+                            }
+
+                        if (frakEight - 1 >= 1)
+                            var frakNine = frakEight - 1;
+                            else if (frakEight - 1 < 1 || frakEight != 1) {
+                               var frakNine = "-";
+                            }
+                            
+                        if (frakNine - 1 >= 1)
+                            var frakTen = frakNine - 1;
+                            else if (frakNine - 1 < 1 || frakNine != 1) {
+                               var frakTen = "-";
+                            }
+		
+                        if (((dpResult * umur) / jatResult) >= 0)
+                            var depOne = (dpResult * umur) / jatResult;
+                            else {
+                                var depOne = 0;
+                            }
+                        
+                        if (((dpResult * frakTwo) / jatResult) >= 0)
+                            var depTwo = (dpResult * frakTwo) / jatResult;
+                            else {
+                                var depTwo = 0;
+                            }
+                        
+                        if (((dpResult * frakThree) / jatResult) >= 0)
+                            var depThree = (dpResult * frakThree) / jatResult;
+                            else {
+                                var depThree = 0;
+                            }
+
+                        if (((dpResult * frakFour) / jatResult) >= 0)
+                            var depFour = (dpResult * frakFour) / jatResult;
+                            else {
+                                var depFour = 0;
+                            }
+
+                        if (((dpResult * frakFive) / jatResult) >= 0)
+                            var depFive = (dpResult * frakFive) / jatResult;
+                            else {
+                                var depFive = 0;
+                            }
+
+                        if (((dpResult * frakSix) / jatResult) >= 0)
+                            var depSix = (dpResult * frakSix) / jatResult;
+                            else  {
+                                var depSix = 0;
+                            }    
+
+                        if (((dpResult * frakSeven) / jatResult) >= 0)
+                            var depSeven = (dpResult * frakSeven) / jatResult;
+                            else  {
+                                var depSeven = 0;
+                            }                           
+
+                        if (((dpResult * frakEight) / jatResult) >= 0)
+                            var depEight = (dpResult * frakEight) / jatResult;
+                            else  {
+                                var depEight = 0;
+                            }   
+
+                        if (((dpResult * frakNine) / jatResult) >= 0)
+                            var depNine = (dpResult * frakNine) / jatResult;
+                            else  {
+                                var depNine = 0;
+                            }   
+
+                        if (((dpResult * frakTen) / jatResult) >= 0)
+                            var depTen = (dpResult * frakTen) / jatResult;
+                            else  {
+                                var depTen = 0;
+                            }   
+          
+                        var bdResult = depOne + depTwo + depThree + depFour + depFive + depSix + depSeven + depEight + depNine + depTen;
+
+                        if (cost - depOne >= 0)
+                            var bukuOne = (cost - depOne);
+                            else {
+                                var bukuOne = 0;
+                            }
+
+                        if (cost - (depOne + depTwo) >= 0 && frakTwo >= 0)
+                            var bukuTwo = (cost - (depOne + depTwo));
+                            else {
+                                var bukuTwo = 0;
+                            }
+
+                        if (cost - (depOne + depTwo + depThree) >= 0 && frakThree >= 0)
+                            var bukuThree = (cost - (depOne + depTwo + depThree))
+                            else {
+                                var bukuThree = 0;
+                            }
+                            
+                        if (cost - (depOne + depTwo + depThree) >= 0 && frakFour >= 0)
+                            var bukuFour = (cost - (depOne + depTwo + depThree + depFour))
+                            else {
+                                var bukuFour = 0;
+                            }
+
+                        if (cost - (depOne + depTwo + depThree + depFour) >= 0 && frakFive >= 0)
+                            var bukuFive = (cost - (depOne + depTwo + depThree + depFour + depFive))
+                            else {
+                                var bukuFive = 0;
+                            }
+                        
+                        if (cost - (depOne + depTwo + depThree + depFour + depFive) >= 0 && frakSix >= 0)
+                            var bukuSix = (cost - (depOne + depTwo + depThree + depFour + depFive + depSix))
+                            else {
+                                var bukuSix = 0;
+                            }
+
+                        if (cost - (depOne + depTwo + depThree + depFour + depFive + depSix) >= 0 && frakSeven >= 0)
+                            var bukuSeven = (cost - (depOne + depTwo + depThree + depFour + depFive + depSix + depSeven))
+                            else {
+                                var bukuSeven = 0;
+                            }
+
+                        if (cost - (depOne + depTwo + depThree + depFour + depFive + depSix + depSeven) >= 0 && frakEight >= 0)
+                            var bukuEight = (cost - (depOne + depTwo + depThree + depFour + depFive + depSix + depSeven + depEight))
+                            else {
+                                var bukuEight = 0;
+                            }
+
+                        if (cost - (depOne + depTwo + depThree + depFour + depFive + depSix + depSeven + depEight) >= 0 && frakNine >= 0)
+                            var bukuNine = (cost - (depOne + depTwo + depThree + depFour + depFive + depSix + depSeven + depEight + depNine))
+                            else {
+                                var bukuNine = 0;
+                            }
+
+                        if (cost - (depOne + depTwo + depThree + depFour + depFive + depSix + depSeven + depEight + depNine) >= 0 && frakTen >= 0)
+                            var bukuTen = (cost - (depOne + depTwo + depThree + depFour + depFive + depSix + depSeven + depEight + depNine + depTen))
+                            else {
+                                var bukuTen = 0;
+                            }
+
+					// Output
+					document.getElementById("jat").innerHTML = "Jumlah Angka Tahun : " + jatResult;
+                    document.getElementById("dp").innerHTML = "Dasar Penyusutan : " + dpResult;
+                    document.getElementById("fr1").innerHTML = "<br>" + umur + " / " + jatResult;
+                    document.getElementById("fr2").innerHTML = "<br>" + frakTwo + " / " + jatResult;
+                    document.getElementById("fr3").innerHTML = "<br>" + frakThree + " / " + jatResult;
+                    document.getElementById("fr4").innerHTML = "<br>" + frakFour + " / " + jatResult;
+                    document.getElementById("fr5").innerHTML = "<br>" + frakFive + " / " + jatResult;
+                    document.getElementById("fr6").innerHTML = "<br>" + frakSix + " / " + jatResult;
+                    document.getElementById("fr7").innerHTML = "<br>" + frakSeven + " / " + jatResult;
+                    document.getElementById("fr8").innerHTML = "<br>" + frakEight + " / " + jatResult;
+                    document.getElementById("fr9").innerHTML = "<br>" + frakNine + " / " + jatResult;
+                    document.getElementById("fr10").innerHTML = "<br>" + frakTen + " / " + jatResult;
+                    document.getElementById("bd1").innerHTML = "<br>" + depOne;
+                    document.getElementById("bd2").innerHTML = "<br>" + depTwo;
+                    document.getElementById("bd3").innerHTML = "<br>" + depThree;
+                    document.getElementById("bd4").innerHTML = "<br>" + depFour;
+                    document.getElementById("bd5").innerHTML = "<br>" + depFive;
+                    document.getElementById("bd6").innerHTML = "<br>" + depSix;
+                    document.getElementById("bd7").innerHTML = "<br>" + depSeven;
+                    document.getElementById("bd8").innerHTML = "<br>" + depEight;
+                    document.getElementById("bd9").innerHTML = "<br>" + depNine;
+                    document.getElementById("bd10").innerHTML = "<br>" + depTen;
+                    document.getElementById("bdtot").innerHTML = "Beban Depresiasi : " + bdResult;
+                    document.getElementById("nb1").innerHTML = "<br>" + bukuOne;
+                    document.getElementById("nb2").innerHTML = "<br>" + bukuTwo;
+                    document.getElementById("nb3").innerHTML = "<br>" + bukuThree;
+                    document.getElementById("nb4").innerHTML = "<br>" + bukuFour;
+                    document.getElementById("nb5").innerHTML = "<br>" + bukuFive;
+                    document.getElementById("nb6").innerHTML = "<br>" + bukuSix;
+                    document.getElementById("nb7").innerHTML = "<br>" + bukuSeven;
+                    document.getElementById("nb8").innerHTML = "<br>" + bukuEight;
+                    document.getElementById("nb9").innerHTML = "<br>" + bukuNine;
+                    document.getElementById("nb10").innerHTML = "<br>" + bukuTen;
+				
+                            }
+					
+				</script>
+				</body>
+				</html>

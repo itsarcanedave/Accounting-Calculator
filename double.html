@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Metode Double Declining</title>
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid mw-100 mh-100 bg-dark" style="border:0;margin-bottom:-1500px;padding-bottom:1500px;">
+	<form action="javascript:count()">
+	  <div class="card mb-3 mw-100 mh-100 bg-dark" style="border:0">
+		<div class="card mt-3 mw-100 mh-100 text-white bg-dark" style="border:0">
+		  <center><h3>Metode Penyusutan - Double Declining</h3></center>
+		</div>
+
+  <div class="card-body mw-100 mh-100 text-black bg-dark" style="border:0">
+	<div class="row mb-2 mw-100 mh-100" style="border:0">
+	  <div class="col-md-12 col-lg-12 text-center">
+		<p class="text-secondary text-light	">Kalkulator ini dapat digunakan untuk menghitung Beban Penyusutan dengan menggunakan Metode Double Declining<br><br>
+			<b>Semua kolom jumlah wajib diisi<br> 
+				Apabila terdapat kolom yang tidak perlu, silahkan isi dengan angka 0<br><br>
+            Mohon mengisi kolom tanpa pemisah ribuan (contoh : 509000; 823765; 93032)<br>
+            Rentang Umur Ekonomis yang dapat dihitung adalah mulai dari 3 hingga 10 tahun<br></b> 
+			
+			</p>
+		</p>
+		  </div>
+	   </div>
+	
+
+<!-- JAT-->
+
+	<div class="row mb-4">
+		<div class="col-lg-12 col-sm-12">
+			<div class="card" style="border:0">
+		  		<div class="card-header bg-secondary text-white">
+					<center><h4>Double Declining</h5></center>
+	</div>
+									
+		
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Cost
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="one" type="number" pattern="(0-9)"
+						title="0-9" min="0" maxlength="20" class="form-control" placeholder="Jumlah">
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Umur Ekonomis
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="two" type="number" pattern="(0-9)"
+						title="0-9" min="3" max = "10" maxlength="20" class="form-control" placeholder="Jumlah">
+				</div>
+			</div>
+			
+		</div>
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Nilai Residu
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="three" type="number" pattern="(0-9)"
+						title="0-9" min="0" maxlength="20" class="form-control" placeholder="Jumlah">
+				</div>
+			</div>
+			
+		</div>
+	
+		
+		
+		
+	<div class="card-footer bg-secondary text-white">
+        <center><h5 id="jat">Jumlah Angka Tahun : 0</h5></center>
+        <center><h5 id="das">Dasar Penyusutan : 0</h5></center>
+		<div class="row mt-4 text-left">
+            </div>
+        </div>
+	</div>
+</div></div>
+
+<!-- Tabel Depresiasi-->
+
+	<div class="col-lg-12 col-sm-12">
+		<div class="card" style="border:0">
+		  <div class="card-header bg-light text-black">
+			<center><h4>Tabel Depresiasi</h4></center>
+	</div>
+							
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-2 text-white">
+                <center><h5><b id="th">Tahun</b></h5></center>
+				</div>
+			<div class="col-2 text-white">
+                <center><h5><b id="na">Nilai Buku Awal</b></center></h5>
+                </div>
+            <div class="col-2 text-white">
+                <center><h5><b id="rt">Rate</b></h5></center>
+                </div>
+            <div class="col-2 text-white">
+                <center><h5><b id="dp">Beban Depresiasi</b></h5></center>
+                </div>
+            <div class="col-2 text-white">
+                <center><h5><b id="ad">Akumulasi Depresiasi</b></h5></center>
+                </div>
+            <div class="col-2 text-white">
+                <center><h5><b id="nk">Nilai Buku Akhir</b></h5></center>
+                </div>
+            </div>
+        
+        <div class="row mb-1">
+            <div class="col-2 text-white">
+                    <center><b id="th1"><br>1</b></center>
+                    </div>
+            <div class="col-2 text-white">
+                    <center><b id="na1"><br>0</b></center>
+                    </div>
+            <div class="col-2 text-white">
+                    <center><b id="rt1"><br>0</b></center>
+                    </div>
+            <div class="col-2 text-white">
+                    <center><b id="dp1"><br>0</b></center>
+                    </div>
+            <div class="col-2 text-white">
+                    <center><b id="ad1"><br>0</b></center>
+                    </div>
+            <div class="col-2 text-white">
+                    <center><b id="nk1"><br>0</b></center>
+                    </div>
+                </div>
+			
+                
+        
+        <div class="row mb-1">
+            <div class="col-2 text-white">
+                    <center><b id="th2"><br>2</b></center>
+                    </div>
+            <div class="col-2 text-white">
+                    <center><b id="na2"><br>0</b></center>
+                    </div>
+            <div class="col-2 text-white">
+                    <center><b id="rt2"><br>0</b></center>
+                    </div>
+            <div class="col-2 text-white">
+                    <center><b id="dp2"><br>0</b></center>
+                    </div>
+            <div class="col-2 text-white">
+                    <center><b id="ad2"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="nk2"><br>0</b></center>
+                    </div>
+                </div>
+        
+            <div class="row mb-1">
+                <div class="col-2 text-white">
+                    <center><b id="th3"><br>3</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="na3"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="rt3"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="dp3"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="ad3"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="nk3"><br>0</b></center>
+                    </div>
+                </div>
+            
+            <div class="row mb-1">
+                <div class="col-2 text-white">
+                    <center><b id="th4"><br>4</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="na4"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="rt4"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="dp4"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="ad4"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="nk4"><br>0</b></center>
+                    </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-2 text-white">
+                    <center><b id="th5"><br>5</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="na5"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="rt5"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="dp5"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="ad5"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="nk5"><br>0</b></center>
+                    </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-2 text-white">
+                    <center><b id="th6"><br>6</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="na6"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="rt6"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="dp6"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="ad6"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="nk6"><br>0</b></center>
+                    </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-2 text-white">
+                    <center><b id="th7"><br>7</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="na7"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="rt7"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="dp7"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="ad7"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="nk7"><br>0</b></center>
+                    </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-2 text-white">
+                    <center><b id="th8"><br>8</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="na8"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="rt8"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="dp8"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="ad8"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="nk8"><br>0</b></center>
+                    </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-2 text-white">
+                    <center><b id="th9"><br>9</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="na9"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="rt9"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="dp9"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="ad9"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="nk9"><br>0</b></center>
+                    </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-2 text-white">
+                    <center><b id="th10"><br>10</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="na10"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="rt10"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="dp10"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="ad10"><br>0</b></center>
+                    </div>
+                <div class="col-2 text-white">
+                    <center><b id="nk10"><br>0</b></center>
+                    </div>
+            </div>
+		</div>
+	</div>
+</div>
+    </div>
+              <div class="row mt-4 text-left">    
+                <div class="col-sm-12 text-left"></div></div>
+                    <center><button class="btn btn-lg btn-block btn-primary" style="width:400px"; 
+                        type="submit">Hitung Beban Depresiasi</button></center><br>
+  
+   
+    <div class="row mt-4 text-left">
+        <div class="col-sm-12 text-left"></div></div>
+		<center><button class="btn btn-lg btn-block btn-info" style="width:300px" onclick="location.href='penyusutan.html'"><h5>Gunakan Metode Lainnya</h5></button></center>
+         
+				</div>
+				
+</form>
+				<script type="text/javascript">
+					// Calculation
+					function count(){
+				
+						var cst = document.getElementById('one').value;
+						var uek = document.getElementById('two').value;
+						var res = document.getElementById('three').value;
+                        
+                        var cost = parseFloat(cst)
+						var umur = parseFloat(uek);
+						var residu = parseFloat(res);
+                        
+                        var thOne = document.getElementById('th1').value;
+						var thTwo = document.getElementById('th2').value;
+						var thThree = document.getElementById('th3').value;
+                        var thFour = document.getElementById('th4').value;
+                        var thFive = document.getElementById('th5').value;
+                        var thSix = document.getElementById('th6').value;
+                        var thSeven = document.getElementById('th7').value;
+                        var thEight = document.getElementById('th8').value;
+                        var thNine = document.getElementById('th9').value;
+                        var thTen = document.getElementById('th10').value;
+
+						var tahunOne = parseFloat(thOne)
+						var tahunTwo = parseFloat(thTwo);
+						var tahunThree = parseFloat(thThree);
+                        var tahunFour = parseFloat(thFour)
+						var tahunFive = parseFloat(thFive);
+						var tahunSix = parseFloat(thSix);
+                        var tahunSeven = parseFloat(thSeven)
+						var tahunEight = parseFloat(thEight);
+						var tahunNine = parseFloat(thNine);
+                        var tahunTen = parseFloat(thTen);
+								   
+                        var jatResult = ((umur * (umur + 1)/2));
+						var dasResult = (cost - residu);
+                        var rate = ((100 / umur) * 2);
+
+                        var bebanTwo = 0;
+                        var akumTwo = 0;
+                        var akhirTwo = 0;
+
+                        var bebanThree = 0;
+                        var akumThree = 0;
+                        var akhirThree = 0;
+                        
+                        var bebanFour = 0;
+                        var akumFour = 0;
+                        var akhirFour = 0;
+
+                        var bebanFive = 0;
+                        var akumFive = 0;
+                        var akhirFive= 0;
+
+                        var bebanSix = 0;
+                        var akumSix = 0;
+                        var akhirSix= 0;
+
+                        var bebanSeven = 0;
+                        var akumSeven = 0;
+                        var akhirSeven= 0;
+
+                        var bebanEight = 0;
+                        var akumEight = 0;
+                        var akhirEight = 0;
+
+                        var bebanNine = 0;
+                        var akumNine = 0;
+                        var akhirNine= 0;
+
+                        var bebanTen = 0;
+                        var akumTen = 0;
+                        var akhirTen= 0;
+                    
+
+                        var bebanOne = ((cost / 100) * rate);
+                        var akumOne = bebanOne;
+                        var akhirOne = cost - bebanOne; 
+
+                        var naOne = akhirOne;
+                        if (2 <= umur){
+                            bebanTwo = ((akhirOne / 100) * rate);
+                            akumTwo = akumOne + bebanTwo;
+                            akhirTwo = akhirOne - bebanTwo;
+                        } else {
+                            naOne = 0;
+                        }
+
+                        var naTwo = akhirTwo;
+                        if (3 <= umur){
+                            bebanThree = ((akhirTwo / 100) * rate);
+                            akumThree = akumTwo + bebanThree;
+                            akhirThree = akhirTwo - bebanThree;
+                        } else {
+                            naTwo = 0;
+                        }
+                        
+                        var naThree = akhirThree;
+                        if (4 <= umur){
+                            bebanFour = ((akhirThree / 100) * rate);
+                            akumFour = akumThree + bebanFour;
+                            akhirFour = akhirThree - bebanFour;
+                        } else {
+                            naThree = 0;
+                        }
+
+                        var naFour = akhirFour;
+                        if (5<= umur){
+                            bebanFive = ((akhirFour / 100) * rate);
+                            akumFive = akumFour + bebanFive;
+                            akhirFive = akhirFour - bebanFive;
+                        } else {
+                            naFour = 0;
+                        }
+
+                        var naFive = akhirFive;
+                        if (6 <= umur) {
+                            bebanSix = ((naFive / 100) * rate);
+                            akumSix = akumFive + bebanSix;
+                            akhirSix = akhirFive - bebanSix;
+                        } else {
+                             naFive =  0;
+                        }
+
+                        var naSix = akhirSix;
+                        if (7 <= umur){
+                            bebanSeven = ((akhirSix / 100) * rate);
+                            akumSeven = akumSix + bebanSeven;
+                            akhirSeven = akhirSix - bebanSeven;
+                        } else {
+                            naSix = 0;
+                        }
+
+                        var naSeven = akhirSeven;
+                        if (8 <= umur){
+                         bebanEight = ((akhirSeven / 100) * rate);
+                         akumEight = akumSeven + bebanEight;
+                         akhirEight = akhirSeven - bebanEight;
+                        } else {
+                            naSeven = 0;
+                        }
+
+                        var naEight = akhirEight;
+                        if (9 <= umur){
+                         bebanNine = ((akhirEight / 100) * rate);
+                         akumNine = akumEight + bebanNine;
+                         akhirNine = akhirEight - bebanNine;   
+                        } else {
+                            naEight = 0;
+                        }
+
+                        var naNine = akhirNine;
+                        if (10 <= umur){
+                         bebanTen = ((akhirNine / 100) * rate);
+                         akumTen = akumNine + bebanNine;
+                         akhirTen = akhirNine - bebanNine;
+                        } else {
+                            naNine = 0;
+                        }                  
+
+                        
+
+					// Output
+					document.getElementById("jat").innerHTML = "Jumlah Angka Tahun : " + jatResult;
+                    document.getElementById("das").innerHTML = "Dasar Penyusutan : " + dasResult;
+                    
+                    document.getElementById("na1").innerHTML = "<br>" + cost;
+                    document.getElementById("na2").innerHTML = "<br>" + naOne;
+                    document.getElementById("na3").innerHTML = "<br>" + naTwo;
+                    document.getElementById("na4").innerHTML = "<br>" + naThree;
+                    document.getElementById("na5").innerHTML = "<br>" + naFour;
+                    document.getElementById("na6").innerHTML = "<br>" + naFive;
+                    document.getElementById("na7").innerHTML = "<br>" + naSix;
+                    document.getElementById("na8").innerHTML = "<br>" + naSeven;
+                    document.getElementById("na9").innerHTML = "<br>" + naEight;
+                    document.getElementById("na10").innerHTML = "<br>" + naNine;
+                                 
+                    document.getElementById("rt1").innerHTML = "<br>" + rate + "%";
+                    document.getElementById("rt2").innerHTML = "<br>" + rate + "%";
+                    document.getElementById("rt3").innerHTML = "<br>" + rate + "%";
+                    document.getElementById("rt4").innerHTML = "<br>" + rate + "%";
+                    document.getElementById("rt5").innerHTML = "<br>" + rate + "%";
+                    document.getElementById("rt6").innerHTML = "<br>" + rate + "%";
+                    document.getElementById("rt7").innerHTML = "<br>" + rate + "%";
+                    document.getElementById("rt8").innerHTML = "<br>" + rate + "%";
+                    document.getElementById("rt9").innerHTML = "<br>" + rate + "%";
+                    document.getElementById("rt10").innerHTML = "<br>" + rate + "%";
+
+                    document.getElementById("dp1").innerHTML = "<br>" + bebanOne;
+                    document.getElementById("dp2").innerHTML = "<br>" + bebanTwo;
+                    document.getElementById("dp3").innerHTML = "<br>" + bebanThree;
+                    document.getElementById("dp4").innerHTML = "<br>" + bebanFour;
+                    document.getElementById("dp5").innerHTML = "<br>" + bebanFive;
+                    document.getElementById("dp6").innerHTML = "<br>" + bebanSix;
+                    document.getElementById("dp7").innerHTML = "<br>" + bebanSeven;
+                    document.getElementById("dp8").innerHTML = "<br>" + bebanEight;
+                    document.getElementById("dp9").innerHTML = "<br>" + bebanNine;
+                    document.getElementById("dp10").innerHTML = "<br>" + bebanTen;
+               
+                    document.getElementById("ad1").innerHTML = "<br>" + akumOne;
+                    document.getElementById("ad2").innerHTML = "<br>" + akumTwo;
+                    document.getElementById("ad3").innerHTML = "<br>" + akumThree;
+                    document.getElementById("ad4").innerHTML = "<br>" + akumFour;
+                    document.getElementById("ad5").innerHTML = "<br>" + akumFive;
+                    document.getElementById("ad6").innerHTML = "<br>" + akumSix;
+                    document.getElementById("ad7").innerHTML = "<br>" + akumSeven;
+                    document.getElementById("ad8").innerHTML = "<br>" + akumEight;
+                    document.getElementById("ad9").innerHTML = "<br>" + akumNine;
+                    document.getElementById("ad10").innerHTML = "<br>" + akumTen;
+
+                    document.getElementById("nk1").innerHTML = "<br>" + akhirOne;
+                    document.getElementById("nk2").innerHTML = "<br>" + akhirTwo;
+                    document.getElementById("nk3").innerHTML = "<br>" + akhirThree;
+                    document.getElementById("nk4").innerHTML = "<br>" + akhirFour;
+                    document.getElementById("nk5").innerHTML = "<br>" + akhirFive;
+                    document.getElementById("nk6").innerHTML = "<br>" + akhirSix;
+                    document.getElementById("nk7").innerHTML = "<br>" + akhirSeven;
+                    document.getElementById("nk8").innerHTML = "<br>" + akhirEight;
+                    document.getElementById("nk9").innerHTML = "<br>" + akhirNine;
+                    document.getElementById("nk10").innerHTML = "<br>" + akhirTen;
+               
+           
+				
+                            }
+					
+				</script>
+				</body>
+				</html>
